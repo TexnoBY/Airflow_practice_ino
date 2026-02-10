@@ -1,0 +1,34 @@
+[
+  {
+    $addFields: {
+      timestamp: {
+        $toDate: "$at"
+      }
+    }
+  },
+  {
+    $group: {
+      _id: {
+        $dateTrunc: {
+          date: "$timestamp",
+          unit: "day"
+        }
+      },
+      averageScore: {
+        $avg: "$score"
+      }
+    }
+  },
+  {
+    $project: {
+      _id: 0,
+      timestamp: "$_id",
+      averageScore: 1
+    }
+  },
+  {
+    $sort: {
+      date: -1
+    }
+  }
+]

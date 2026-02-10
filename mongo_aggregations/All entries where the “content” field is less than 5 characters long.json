@@ -1,0 +1,17 @@
+[
+  {
+    $match: {
+      content: {
+        $type: "string"
+      },
+      $expr: {
+        $lt: [
+          {
+            $strLenCP: "$content"
+          },
+          5
+        ]
+      }
+    }
+  }
+]
