@@ -5,6 +5,7 @@
 
 ## DAG process_data_to_mongo_classic
 ![Screenshot 2](screenshots/Screenshot_20260210_151714.png)
+![Dag schema](screenshots/process_data_to_mongo_classic-graph.png)
 
 ## DAG copy_data_for_processing
 ![Screenshot 3](screenshots/Screenshot_20260210_151736.png)
